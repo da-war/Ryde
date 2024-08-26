@@ -32,13 +32,13 @@ const getTextVariantStyle = (variant: ButtonProps["textVariant"]) => {
   }
 };
 
-const CustomButton = ({
+const CustomButton: React.FC<ButtonProps> = ({
   onPress,
   title,
   bgVariant = "primary",
   textVariant = "Default",
-  iconLeft,
-  iconRight,
+  IconLeft,
+  IconRight,
   className,
   ...props
 }) => (
@@ -47,11 +47,11 @@ const CustomButton = ({
     className={`w-full py-2 rounded-full flex flex-row justify-center items-center shadow-md shadow-neutral-400/70 ${getBgVariantStyle(bgVariant)} ${className}`}
     {...props}
   >
-    {iconLeft && <IconLeft />}
+    {IconLeft && <IconLeft />}
     <Text className={`text-lg font-bold ${getTextVariantStyle(textVariant)}`}>
       {title}
     </Text>
-    {iconRight && <IconLeft />}
+    {IconRight && <IconRight />}
   </TouchableOpacity>
 );
 export default CustomButton;

@@ -1,10 +1,15 @@
 import { Stack } from "expo-router";
-import AuthLayout from "@/app/(auth)/_layout";
 
-const RootLayout = () => {
+import "react-native-reanimated";
+import { ReactNode } from "react";
+
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <Stack>
-      <Stack.Screen name="index" />
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="find-ride" />
+      <Stack.Screen name="confirm-ride" />
+      <Stack.Screen name="book-ride" />
     </Stack>
   );
 };
